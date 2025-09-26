@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Estantería de Libros</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .shelf {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .book {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            width: 200px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .book h3 {
+            margin: 0 0 10px;
+        }
+        .book p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+<h1>Estantería de Libros</h1>
+<div class="shelf">
+    <div class="book" th:each="libro : ${libros}">
+        <h3 th:text="${libro.titulo}">Título del libro</h3>
+        <p><strong>Autor:</strong> <span th:text="${libro.autor}">Nombre del autor</span></p>
+        <p><strong>Género:</strong> <span th:text="${libro.genero}">Género del libro</span></p>
+        <p><strong>Año:</strong> <span th:text="${libro.anio}">Año de publicación</span></p>
+    </div>
+</div>
+</body>
+</html>

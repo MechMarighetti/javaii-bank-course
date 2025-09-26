@@ -5,4 +5,5 @@ import java.util.Optional;
 
 public interface EditorialRepository extends MongoRepository<Editorial, String> {
     Optional<Editorial> findByNombre(String nombre);
+
 }
